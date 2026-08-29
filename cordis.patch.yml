@@ -1,7 +1,7 @@
-# qingxiao skin bundle patch: inserts its public dsh.client entry into the web plugin roster.
-# The bundle is the official dsh plugin shape — install it with
-# `dsh plugin --profile <name> add <path-or-git-url>`; mutual exclusion between
-# skins is managed by the home-layer disabled rows (same as other ui skins).
+# 清宵皮肤包注册补丁：把它的公开 dsh.client 条目插入 web 插件列表。
+# 本包即官方 dsh 插件形态，用
+# `dsh plugin --profile <name> add <路径或 git URL>` 安装即可；
+# 皮肤之间的互斥由 home 层的 disabled 行管理（与其他 ui 皮肤一致）。
 - insert:
     - id: ui-skin-qingxiao
       name: '@dsh-external/dsh-client-ui-skin-qingxiao'
