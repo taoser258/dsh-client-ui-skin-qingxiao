@@ -1,10 +1,15 @@
 # 更新日志
 
+## 0.1.3 — 未发布
+
+- 移除本地预览沙盒（`preview/mockup.html`、`preview/dev-server.mjs`）及 README「本地预览 / 开发」章节
+- 修正设置面板页脚版本号：`SKIN_VERSION` 此前停在 0.1.0，现与 `package.json` 保持同步
+
 ## 0.1.2 — 2026-08-29
 
 - 修复 `peerDependencies` 预发布版本范围：`^0.1.0-rc.6` 实际匹配不到兼容上限 `0.1.1-rc.x`，改为显式范围 `>=0.1.0-rc.6 <0.1.1-0 || >=0.1.1-rc.1 <0.2.0-0`，消除安装时可能的 `ERESOLVE`
 - 新增 `screenshots.json`，声明 dsh-market 详情页展示的截图及顺序
-- README 补回「本地预览 / 开发」章节；`cordis.patch.yml` 注释中文化；新增本更新日志
+- `cordis.patch.yml` 注释中文化；新增本更新日志
 
 ## 0.1.1 — 2026-08-29
 
