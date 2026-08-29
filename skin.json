@@ -1,0 +1,30 @@
+{
+  "id": "qingxiao",
+  "name": "清宵 · 弦凝清霄",
+  "nameEn": "Qingxiao · Strings of the Clear Sky",
+  "author": "taoser",
+  "tagline": "冰蓝青碧配色 · 月白玻璃面板 · 剑气流光装饰 · 弦剑剑仙氛围",
+  "description": "《鸣潮》清宵主题皮肤：以冰蓝、青碧、月白、玄夜蓝构成清冷剑仙调色板，以鎏金与剑气流光作为装饰母题。qx 默认背景可随时在设置面板中更换，遮罩浓度与文字对比增强保证任何背景下文字清晰可读。亮色模式映射月白庭院的清昼氛围，暗色模式映射玄夜剑鸣的深夜氛围。",
+  "tags": [
+    "anime",
+    "wuthering-waves",
+    "qingxiao",
+    "aero",
+    "cyan",
+    "ice-blue",
+    "gold",
+    "sword-immortal"
+  ],
+  "accent": "#56C8C0",
+  "bodyAttr": "data-dsh-qingxiao",
+  "package": "@dsh-external/dsh-client-ui-skin-qingxiao",
+  "wiring": {
+    "id": "ui-skin-qingxiao",
+    "bundleWired": false
+  },
+  "preview": {
+    "light": "preview/screen-light.png",
+    "dark": "preview/screen-dark.png"
+  },
+  "order": 9
+}
