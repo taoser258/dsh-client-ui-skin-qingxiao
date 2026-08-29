@@ -59,20 +59,28 @@
 
 ### 手动安装
 
+**命令行安装**（任选其一）：
+
 ```sh
-git clone https://github.com/taoser258/dsh-client-ui-skin-qingxiao
-cd <harness>
-dsh plugin --profile web add ../dsh-client-ui-skin-qingxiao
+# 方式 A（推荐）：直接用 git URL 安装
+dsh plugin --profile web add https://github.com/taoser258/dsh-client-ui-skin-qingxiao
 ```
 
-或手动将本包放入 DSH 的 `profiles/web/node_modules/@dsh-external/dsh-client-ui-skin-qingxiao/` 目录下，然后在 profile 的 `cordis.patch.yml` 中添加：
+```sh
+# 方式 B：先克隆到本地任意位置，再把实际路径交给 dsh
+git clone https://github.com/taoser258/dsh-client-ui-skin-qingxiao.git
+dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
+```
+
+**手动放置安装**：将本包完整复制到 DSH 的 `profiles/web/node_modules/@dsh-external/dsh-client-ui-skin-qingxiao/` 目录下，然后在 profile 的 `cordis.patch.yml` 中追加一条 insert 项（与本包自带的 `cordis.patch.yml` 保持一致）：
 
 ```yaml
-- id: ui-skin-qingxiao
-  disabled: false
+- insert:
+    - id: ui-skin-qingxiao
+      name: '@dsh-external/dsh-client-ui-skin-qingxiao'
 ```
 
-重启 DSH 后在设置 → 皮肤中选择「清宵 · 弦凝清霄」。
+重启 DSH。
 
 ## 兼容性
 
