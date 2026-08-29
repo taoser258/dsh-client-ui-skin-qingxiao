@@ -82,6 +82,17 @@ dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
 
 重启 DSH。
 
+## 本地预览 / 开发
+
+无需 DSH 即可预览完整效果（`preview/mockup.html` 会以真实 DOM 结构加载 `lib/client.js`）：
+
+```sh
+node preview/dev-server.mjs 8931
+# 浏览器打开 http://127.0.0.1:8931/        （亮色）
+#              http://127.0.0.1:8931/?theme=dark   （暗色）
+#              http://127.0.0.1:8931/?panel=1      （自动展开设置面板）
+```
+
 ## 兼容性
 
 - DSH Web：0.1.0-rc.6 至 0.1.1-rc.2（dsh-web-frontend）
