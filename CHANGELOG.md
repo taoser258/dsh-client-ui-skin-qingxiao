@@ -1,9 +1,13 @@
 # 更新日志
 
-## 0.1.3 — 未发布
+## 0.1.3 — 2026-09-01
 
-- 移除本地预览沙盒（`preview/mockup.html`、`preview/dev-server.mjs`）及 README「本地预览 / 开发」章节
-- 修正设置面板页脚版本号：`SKIN_VERSION` 此前停在 0.1.0，现与 `package.json` 保持同步
+- **适配 dsh 0.1.2-alpha.1（本次发布主项）**：主题包把背景令牌改定义在 `body` / `body[data-ds-dark-theme]` 且样式表注入在皮肤之后，同特异度后来者胜，暗色形态的侧栏与对话框周围因此变回不透明黑。皮肤令牌覆盖拆为明/暗双选择器（特异度 0,2,1），无论注入先后都稳压主题；新增 `--dsw-alias-bg-layer-2/3` 玻璃化（新版对话框/菜单/浮层改读这两档）。亮/暗两形态均以无头 Edge + CDP 实测恢复。
+- `dsh.client.version` 兼容范围扩至 `0.1.0-rc.6 - 0.1.2-alpha.1`。
+- 正文字号缩放修复：`font` 简写不接受 `calc()`，旧令牌覆盖整条被浏览器丢弃导致滑块无反应；改为运行时生成 px 字面量令牌表，并在面板加「实测正文」自校验读数。
+- 对话区宽度一并覆盖 `--dsh-chat-content-width`（新版正文列/输入卡读该令牌，只写 max-width 会被 DSH 卡住）。
+- 移除本地预览沙盒（`preview/mockup.html`、`preview/dev-server.mjs`）及 README「本地预览 / 开发」章节。
+- 设置面板页脚版本号 `SKIN_VERSION` 与 `package.json` 保持同步。
 
 ## 0.1.2 — 2026-08-29
 
