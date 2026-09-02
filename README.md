@@ -71,12 +71,17 @@ git clone https://github.com/taoser258/dsh-client-ui-skin-qingxiao.git
 dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
 ```
 
-**手动放置安装**：将本包完整复制到 DSH 的 `profiles/web/node_modules/@dsh-external/dsh-client-ui-skin-qingxiao/` 目录下，然后在 profile 的 `cordis.patch.yml` 中追加一条 insert 项（与本包自带的 `cordis.patch.yml` 保持一致）：
+```sh
+# 方式 C：从 npm 安装
+dsh plugin --profile web add @taosee258/dsh-client-ui-skin-qingxiao
+```
+
+**手动放置安装**：将本包完整复制到 DSH 的 `profiles/web/node_modules/@taosee258/dsh-client-ui-skin-qingxiao/` 目录下，然后在 profile 的 `cordis.patch.yml` 中追加一条 insert 项（与本包自带的 `cordis.patch.yml` 保持一致）：
 
 ```yaml
 - insert:
     - id: ui-skin-qingxiao
-      name: '@dsh-external/dsh-client-ui-skin-qingxiao'
+      name: '@taosee258/dsh-client-ui-skin-qingxiao'
 ```
 
 重启 DSH。

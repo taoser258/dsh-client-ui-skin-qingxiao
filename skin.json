@@ -17,7 +17,7 @@
   ],
   "accent": "#56C8C0",
   "bodyAttr": "data-dsh-qingxiao",
-  "package": "@dsh-external/dsh-client-ui-skin-qingxiao",
+  "package": "@taosee258/dsh-client-ui-skin-qingxiao",
   "wiring": {
     "id": "ui-skin-qingxiao",
     "bundleWired": false

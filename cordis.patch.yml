@@ -4,4 +4,4 @@
 # 皮肤之间的互斥由 home 层的 disabled 行管理（与其他 ui 皮肤一致）。
 - insert:
     - id: ui-skin-qingxiao
-      name: '@dsh-external/dsh-client-ui-skin-qingxiao'
+      name: '@taosee258/dsh-client-ui-skin-qingxiao'
