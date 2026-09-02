@@ -53,7 +53,7 @@
 
 对你的 DSH 说：
 ```
-安装一下这个皮肤包：https://github.com/taoser258/dsh-client-ui-skin-qingxiao
+安装一下这个皮肤包：@taosee258/dsh-client-ui-skin-qingxiao
 ```
 
 ### 手动安装
@@ -61,19 +61,19 @@
 **命令行安装**（任选其一）：
 
 ```sh
-# 方式 A（推荐）：直接用 git URL 安装
+# 方式 A（推荐）：从 npm 安装
+dsh plugin --profile web add @taosee258/dsh-client-ui-skin-qingxiao
+```
+
+```sh
+# 方式 B：用 git URL 安装（始终对应仓库最新版）
 dsh plugin --profile web add https://github.com/taoser258/dsh-client-ui-skin-qingxiao
 ```
 
 ```sh
-# 方式 B：先克隆到本地任意位置，再把实际路径交给 dsh
+# 方式 C：先克隆到本地任意位置，再把实际路径交给 dsh
 git clone https://github.com/taoser258/dsh-client-ui-skin-qingxiao.git
 dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
-```
-
-```sh
-# 方式 C：从 npm 安装
-dsh plugin --profile web add @taosee258/dsh-client-ui-skin-qingxiao
 ```
 
 **手动放置安装**：将本包完整复制到 DSH 的 `profiles/web/node_modules/@taosee258/dsh-client-ui-skin-qingxiao/` 目录下，然后在 profile 的 `cordis.patch.yml` 中追加一条 insert 项（与本包自带的 `cordis.patch.yml` 保持一致）：
