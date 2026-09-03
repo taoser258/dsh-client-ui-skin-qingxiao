@@ -1,7 +1,7 @@
 {
   "name": "@taosee258/dsh-client-ui-skin-qingxiao",
   "description": "Qingxiao (Wuthering Waves) themed skin with ice-blue/jade/moon-white palette, sword-light motes and user-swappable background for the dsh web GUI",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
