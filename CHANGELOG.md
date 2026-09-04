@@ -7,6 +7,7 @@
 - **图一（usage-stats 类插件窗）质感升级**：打标时实测窗口自身底色，完全不透明的（`section.usg_panel` 的 `rgb(97,102,107)`）追加 `.qx-frost-solid`，由明/暗双选择器（沿用 0.1.3 令牌防翻盘经验；两条**各 (0,5,1)**——亮色那条用 `:not()` 参数补回一个属性选择器，与暗色那条打平）把窗底换成 `rgba(var(--qx-panel-rgb), var(--qx-frost-panel-alpha))` 半透明皮肤底，并摘掉直接子层的底色，让原本被盖死的虚化层透出来；深层按钮/表格保留自身底色，字不糊。新令牌 `--qx-frost-panel-alpha`：亮色 0.72、暗色 0.62。
 - **dsh-market 独立窗口插件适配**：打标范围从「body 直接子节点」扩到 ① body 级零尺寸挂载壳下探一层（better-sidebar 的 `[data-dsh-panel-host]` 之例，即图二文件面板）与 ② frame 的浮层容器 `overlayLayer` / `[data-slot='shell.overlay']`（agent-teams、aemeath 等走 `slots.inject('shell.overlay')` 的插件窗）；观察器一律仍只 `childList`（不碰 subtree/attributes，流式渲染零开销），浮层宿主首次发现后就地挂观察（实测：往 `shell.overlay` 里插一个 z-index 只有 5 的窗，无点击、500ms 内即被打标虚化），另加点击后 60ms 去抖补扫，兜住「预挂载 `display:none`、点开只改 style」这类无 DOM 新增的窗。DSH 原生弹窗不误伤：`role=dialog|alertdialog|alert|menu|listbox|tooltip`、`aria-modal`、`data-slot^="shell."`、内含侧栏/对话主区的应用主框、铺满视口的遮罩一律跳过，overlayLayer 内只认「自身画了底色」的节点。
 - **dispose 补清**：三个新 body 属性、`--qx-frost-blur` 内联变量、点击监听、去抖计时器与浮层容器观察目标全部撤回，`.qx-frost` / `.qx-frost-solid` 标记摘净。
+- **「文字对比度增强」默认改为关**：亮底上白晕会把压深的灰字重新洗淡（用户实测），灰字清晰度全部改由 label 令牌压深承担；已同步翻转服务端存档值。
 - **设置/对话框毛玻璃背板**：弹窗 mask（fixed 满视口空 div，无后代零困陷风险）挂 `backdrop-filter: blur(var(--qx-frost-blur))`，底下对话与画卷整片糊化；面板底从 layer-2 的 0.38 提到 0.80/0.74（明/暗），玻璃感改由糊掉的背板提供，表单文字彻底清晰。挂总开关下可关。
 - **对话区整列文字光晕**：`[id=root]` 容器级三层白/墨光晕随继承落到每个 span/div（旧规则只挑 p/li/td 管不到卡片描述与工具行）。
 - **对话区淡灰字提浓**：覆盖 DSH `--dsw-alias-label-secondary/tertiary` 令牌（浅色 #61666b/#81858c → #39454f/#5a6672，暗色微提至 #dde1e5/#c4cad1），工具行标题、时间戳、卡片描述、底部统计行在画卷底上不再灰成一片；明暗双选择器 (0,2,1) 防主题包翻盘。
