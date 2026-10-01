@@ -14,7 +14,7 @@
 
 - **背景画卷**：默认铺一张清宵插画当背景，亮色、暗色模式都能透出它。可以在设置面板里分别为两种模式换成你自己的图（PNG / JPG / WebP / GIF，7MB 以内），也能一键换回默认。
 - **全套配色重制**：侧边栏、按钮、输入框、对话区、代码块、滚动条……界面每一处都按清宵的配色重新调过；暗色模式是专门的「玄夜剑鸣」氛围。
-- **毛玻璃效果**：打开插件的小窗口（比如用量统计）、左右两侧面板、设置弹窗时，窗口背后的画面会被柔和地虚化掉——壁纸的轮廓透得出来，但绝不跟文字打架。想多糊可以多糊（0–30 档随意调），不想要可以整体关掉，也可以只关插件窗或只关侧栏。
+- **毛玻璃效果**：打开插件的小窗口（比如用量统计）、左右两侧面板、插件页/自动化任务页等整页视图、设置弹窗乃至窗口顶栏，背后的画面都会被柔和地虚化掉——壁纸的轮廓透得出来，但绝不跟文字打架。想多糊可以多糊（0–30 档随意调），不想要可以整体关掉，也可以只关插件窗或只关侧栏。
 - **字永远看得清**：文字颜色专门为「压在插画背景上」调校过——正文浓黑/亮白，次要文字也比 DSH 原生的灰色深两档；背景还有可调浓度的柔光遮罩兜底。
 - **剑气流光**：可选的粒子装饰，青碧或鎏金两种色调；系统开了「减少动态效果」会自动静止。
 - **亮暗切换动画**：切换主题时有一抹剑光扫过屏幕的小动画，浏览器标签栏颜色和图标也会跟着换。
@@ -42,32 +42,32 @@
 
 ### 懒人版
 
-直接对你的 DSH 说：
+直接对你的 DSH 说（桌面端、网页端都适用，会装进当前档案）：
 ```
 安装一下这个皮肤包：@taosee258/dsh-client-ui-skin-qingxiao
 ```
 
 ### 手动安装
 
-**命令行安装**（任选其一）：
+**命令行安装**（任选其一；`--profile` 按目标填：桌面端 `desktop`、网页端 `web`）：
 
 ```sh
 # 方式 A（推荐）：从 npm 安装
-dsh plugin --profile web add @taosee258/dsh-client-ui-skin-qingxiao
+dsh plugin --profile desktop add @taosee258/dsh-client-ui-skin-qingxiao
 ```
 
 ```sh
 # 方式 B：用 git URL 安装（始终对应仓库最新版）
-dsh plugin --profile web add https://github.com/taoser258/dsh-client-ui-skin-qingxiao
+dsh plugin --profile desktop add https://github.com/taoser258/dsh-client-ui-skin-qingxiao
 ```
 
 ```sh
 # 方式 C：先克隆到本地任意位置，再把实际路径交给 dsh
 git clone https://github.com/taoser258/dsh-client-ui-skin-qingxiao.git
-dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
+dsh plugin --profile desktop add /path/to/dsh-client-ui-skin-qingxiao
 ```
 
-**手动放置安装**：把本包整个文件夹复制到 DSH 的 `profiles/web/node_modules/@taosee258/dsh-client-ui-skin-qingxiao/` 下，然后在 profile 的 `cordis.patch.yml` 里追加一条（与本包自带的 `cordis.patch.yml` 保持一致）：
+**手动放置安装**：把本包整个文件夹复制到 DSH 的 `profiles/<档案名>/node_modules/@taosee258/dsh-client-ui-skin-qingxiao/` 下（桌面端档案为 `desktop`），然后在 profile 的 `cordis.patch.yml` 里追加一条（与本包自带的 `cordis.patch.yml` 保持一致）：
 
 ```yaml
 - insert:
@@ -79,9 +79,10 @@ dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
 
 ## 兼容性
 
-- DSH Web / 桌面端：0.1.0-rc.6 至 0.2.0-rc.2（桌面端自 0.2.0-rc.2 起真机实测）
-- 平台：Web（桌面端内置 Web GUI 同样适用，档案为 `desktop` 时设置同样保存）
-- 最近验证：2026-10-01（0.2.0-rc.2 桌面端亮/暗两种模式实测）
+- DSH Web / 桌面端：0.1.0-rc.6 至 0.2.0-rc.2
+- 自 0.2.0 起针对官方桌面端 0.2.0-rc.2 深度适配：字号令牌新基准、顶栏毛玻璃横带与原生窗口按钮融合、插件/任务等整页视图毛玻璃背板、开关与徽章配色对齐
+- 平台：Web / Windows 桌面端（设置保存在各自档案的 `data/` 目录下）
+- 最近验证：2026-10-01（0.2.0-rc.2 桌面端亮/暗两态真机实测）
 
 ## 版权所有人
 
