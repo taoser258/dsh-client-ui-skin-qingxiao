@@ -79,9 +79,9 @@ dsh plugin --profile web add /path/to/dsh-client-ui-skin-qingxiao
 
 ## 兼容性
 
-- DSH Web：0.1.0-rc.6 至 0.1.2-alpha.1
-- 平台：Web
-- 最近验证：2026-09-04（亮/暗两种模式真机实测）
+- DSH Web / 桌面端：0.1.0-rc.6 至 0.2.0-rc.2（桌面端自 0.2.0-rc.2 起真机实测）
+- 平台：Web（桌面端内置 Web GUI 同样适用，档案为 `desktop` 时设置同样保存）
+- 最近验证：2026-10-01（0.2.0-rc.2 桌面端亮/暗两种模式实测）
 
 ## 版权所有人
 

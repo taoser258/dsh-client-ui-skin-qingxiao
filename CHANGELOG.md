@@ -1,5 +1,18 @@
 # 更新日志
 
+## 0.2.0 — 2026-10-01
+
+本版主题：**适配 DeepSeek Harness 官方桌面端 0.2.0-rc.2**（兼容范围扩至 0.1.0-rc.6 – 0.2.0-rc.2）。
+
+### 0.2.0-rc.2 适配
+
+- **正文字号令牌基准全面重校**：新版主题包把 markdown 字号令牌的基准从 16px/28px 系整体改为 14px/24px 系，并新增官方「正文字号偏移」变量（`--dsh-content-font-delta`，官方设置里调字号时写入）。字号缩放表现在按 0.2.0-rc.2 逐项重建（base 14/24 · h1 21/30 · h2 19/28 · h3 18/26 · small 12/20 · table 13/22 · code 12/19 · code-block 11/19 · code-block-small 11/16），缩放系数乘在整个表达式外层——100% 时与官方逐字节一致，官方设置里的字号偏移在皮肤缩放下继续生效，不再被抹掉。
+- **右详情列更名适配**：0.2.0 布局把旧的 `detailsCol` 更名为 `rightbarCol`（CSS Modules 哈希前缀变化不影响子串匹配）。磨砂玻璃、列底色、文字光晕等所有涉及右列的选择器改为两条并列，新旧布局都能命中。
+- **侧栏根挂点更换**：0.2.0 侧边栏组件不再输出 `data-dsh-sidebar-root` 属性。侧栏云纹底饰（charms）改用栏内 `*_root` 类子串定位；毛玻璃「误把应用主框当插件窗」的复查改认 `sidebarCol` 布局列 + 对话滚动容器。
+- **设置保存目录适配**：0.2.0 桌面端主进程不再注入 `DSH_DESKTOP_PROFILE` 环境变量，档案固定为 `profiles/desktop`。设置目录解析改为 `DSH_PROFILE_DIR` → `DSH_PROFILE`/`DSH_DESKTOP_PROFILE` → `profiles/desktop`（存在即用）→ `profiles/web` 的顺序，新旧桌面端与 CLI 场景都能找到正确目录。
+- **清单声明**：`dsh.client` 补充 `immediately: true`（官方 0.2.0 插件模板推荐写法，保证皮肤随启动装载）；peerDependencies 兼容范围扩展至 `0.2.0-rc.x`。
+- 核对确认 0.2.0-rc.2 中继续可用、无需改动：`window.__ModuleLoader__.load({id, factory})` 装载契约、webServer 路由注册、`data-slot='conversation'` / `data-conversation-scroll` / `data-phase='hero'` / `data-shell-overlay` / `overlayLayer` 挂点、`--dsw-alias-bg-*` 等全套玻璃化令牌与 `--dsh-chat-content-width` 对话列宽令牌、inject 列表对未装载包名的容忍语义。
+
 ## 0.1.4 — 2026-09-04
 
 本版主题：**毛玻璃虚化** + **文字清晰度整体调校**。
