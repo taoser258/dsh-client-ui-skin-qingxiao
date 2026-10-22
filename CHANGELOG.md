@@ -1,5 +1,13 @@
 # 更新日志
 
+## 0.3.1 — 2026-10-22（未发布）
+
+本版主题：**适配 DeepSeek Harness 官方桌面端 0.2.1-rc.2**。
+
+- **代码字号偏移保留**：0.2.1 起代码字号接入官方「代码字号」设置（`--dsh-code-font-size`/`--dsh-code-font-delta`）。字号缩放表的 code/code-block/code-block-small 三项改为在官方表达式外层乘缩放系数——官方代码字号偏移在皮肤缩放下继续生效，与正文字号偏移同机制。
+- 兼容范围扩展至 0.2.1-rc.2（peerDependencies 与 `dsh.client.version` 同步）；逐一核对 0.2.1-rc.2：slot 名、布局类名、主题令牌、`data-ds-dark-theme`/`data-windows-titlebar`/`data-phase`、标题栏探针、webServer 路由 API、ModuleLoader 契约均未变化。
+- 0.2.1 自动更新会重排 profile 的 cordis.patch.yml（insert 行被移至中部）——注册行仍在，插件正常加载，无需手动处理。
+
 ## 0.3.0 — 2026-10-02
 
 本版主题：**开屏动画（线稿上色）**。
