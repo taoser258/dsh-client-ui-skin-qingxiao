@@ -9,7 +9,7 @@
 - 0.2.1 自动更新会重排 profile 的 cordis.patch.yml（insert 行被移至中部）——注册行仍在，插件正常加载，无需手动处理。
 
 - **人格设置（新功能）**：设置页新增「人格」栏。内置《鸣潮》清宵人格（soul.md / style.md，附 sources.md 同源考据），一键让 DSH 以清宵的语气、称呼与剧情边界对话；支持自定义人格（编辑或导入 .md）、剧透闸门、称呼、OOC 触发词、身份锚与 soul/style 核心区开关、注入预览；并内置 character-persona-forge skill 推荐，可定制任意角色。
-- **人格注入机制（DSH 适配）**：遵循 character-persona-forge 的三层注入模型并映射到 DSH 原生通道——系统层写入 （dsh-agent-instructions 的 user-global 指令，哨兵注释包裹、不影响文件其余内容，禁用即移除）；锚定层/后置层因 DSH 无逐轮注入钩子，并入同一指令块（身份锚 + 保持指令）。新会话生效。
+- **人格注入机制（DSH 适配）**：遵循 character-persona-forge 的三层注入模型并映射到 DSH 原生通道——系统层写入 ~/.dsh/AGENTS.md（dsh-agent-instructions 的 user-global 指令，哨兵注释包裹、不影响文件其余内容，禁用即移除）；锚定层/后置层因 DSH 无逐轮注入钩子，并入同一指令块（身份锚 + 保持指令）。新会话生效。
 
 ### 布局与观感修复
 
