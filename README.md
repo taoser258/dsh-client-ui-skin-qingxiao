@@ -44,7 +44,7 @@
 - **注入位置**：人格指令写入 `~/.dsh/AGENTS.md`（DSH 用户全局指令，哨兵注释包裹，关掉或卸载即自动移除），**只影响新会话**。
 - **新会话人格键**：开新会话时，输入区「标准模式」右侧有「人格」键，直接选本会话用谁，含「不使用人格」。会话一旦开始，该键随欢迎页消失——**选定后请勿中途更换，要换人格请开新会话**。
 - **注入选项**：剧透闸门、对使用者的称呼、OOC 触发词、身份锚与 soul/style 核心区开关、注入预览。
-- **定制任意角色**：推荐配合 [character-persona-forge](https://github.com/taoser258/character-persona-forge) 使用——从官方文本与配音考据出发，为任意角色生成 soul.md / style.md / sources.md。
+- **定制任意角色**：推荐配合 [character-persona-forge](https://www.npmjs.com/package/character-persona-forge) 使用——从官方文本与配音考据出发，为任意角色生成 soul.md / style.md / sources.md。
 
 ## 版本
 
