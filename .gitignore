@@ -4,3 +4,10 @@ node_modules/
 Thumbs.db
 *.bak_*
 *.tmp
+
+# 内部审查/交接文档（不进入公开仓库）
+HANDOFF-ZCODE.md
+REVIEW-HANDOFF.md
+REVIEW-REPORT.md
+WORKBUDDY-PROMPT.md
+review/
