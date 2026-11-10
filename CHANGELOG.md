@@ -1,5 +1,16 @@
 # 更新日志
 
+## 0.4.2 — 2026-11-10
+
+适配 DSH 0.2.2-rc.1。
+
+- **确认客户端半正常加载**：0.2.2 的 boot graph 正常收录本包（83 个入口，含 `@taosee258/dsh-client-ui-skin-qingxiao`），皮肤样式、槽位、Hero 键与全部服务端 API 均正常，reload 无运行时报错。此前「皮肤没加载」的结论是 profile 的 `dshmarket` 禁用记录与 patch 中残留 `disabled: true` 所致，与插件代码无关。
+- **宿主 DOM 契约迁移**：`[data-pane='sidebar']` → `[data-slot='sidebar']`；移除 0.2.2 已删除的 `detailsCol`；右侧面板补 DockKit 钩子（`data-dockkit-column` / `data-dockkit-pane` / `data-dockkit-host` / `data-sidebar-right-panel`）。
+- **依赖对齐 0.2.2**：移除已不存在的 `@deepseek-ai/dsh-client-runtime`（peerDependencies 与 `dsh.client.inject`）；兼容上限提到 `<0.2.3-0`；`dsh.client` 补回 `immediately` 与展示用 `version`。
+- **官方人设冲突提示**：设置页「人格」顶部检测官方「人设」页（`@deepseek-ai/dsh-persona`，走 system prompt 通道）；两者同时启用时提示双份人设风险，未启用时静默。
+- **「跳转到人格设置」适配 0.2.2**：侧栏收起时账号菜单会被移到视口外（`rect.right <= 0`），跳转前先展开侧栏；设置导航查找从「只看第一个 `[role="dialog"]`」改为遍历所有 dialog——0.2.2 里侧栏本身也是 dialog，旧写法会永远找不到「人格」。
+- 版本号：`package.json` 与 `SKIN_VERSION` 均为 0.4.2。
+
 ## 0.4.1 — 2026-10-23
 
 - 人格页「定制任意角色」的 skill 入口改指向 **npm**（`character-persona-forge`，v1.5.3），不再依赖 GitHub 仓库链接。

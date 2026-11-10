@@ -91,10 +91,11 @@ dsh plugin --profile desktop add /path/to/dsh-client-ui-skin-qingxiao
 
 ## 兼容性
 
-- DSH Web / 桌面端：0.1.0-rc.6 至 0.2.1-rc.2
+- DSH Web / 桌面端：0.1.0-rc.6 至 0.2.2-rc.1
 - 自 0.2.0 起针对官方桌面端深度适配：字号令牌新基准、顶栏毛玻璃横带与原生窗口按钮融合、插件/任务等整页视图毛玻璃背板、开关与徽章配色对齐；0.2.1 起代码字号跟随官方「代码字号」设置
+- 0.2.2 起 `@deepseek-ai/dsh-client-runtime` 已从宿主移除，slots / primitives / dockkit 为平台共享模块；本版已对齐（移除旧依赖，并用 `data-slot` / DockKit 钩子替换 `data-pane` / `detailsCol`）
 - 平台：Web / Windows 桌面端（设置与人格数据保存在各自档案的 `data/` 目录下）
-- 最近验证：2026-10-23（0.2.1-rc.2 桌面端真机点测：皮肤、设置面板、背景拖放、人格库、新会话人格键）
+- 最近验证：2026-11-10（0.2.2-rc.1 桌面端真机点测：加载与 boot graph、设置面板 7 开关 + 7 滑块与持久化、背景画卷上传/恢复、毛玻璃与 DockKit 右侧面板、人格分区与查看/编辑/预览、Hero 人格键、跳转人格设置）
 
 ## 版权所有人
 
