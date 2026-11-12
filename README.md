@@ -6,9 +6,9 @@
 
 配色调色板取自清宵的形象：**冰蓝**（发色）、**青碧**（发饰流苏）、**月白**（衣装）、**玄夜蓝**（暗色形态）、**鎏金**（金饰点缀）。
 
-![亮色 · 清昼庭院](assets/preview-light.gif)
+![亮色 · 清昼庭院](preview/screen-light.gif)
 
-![暗色 · 玄夜剑鸣](assets/preview-dark.gif)
+![暗色 · 玄夜剑鸣](preview/screen-dark.gif)
 
 ## 这个皮肤有什么
 

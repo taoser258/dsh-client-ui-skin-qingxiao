@@ -41,7 +41,8 @@
     "cordis.patch.yml",
     "skin.json",
     "assets",
-    "preview",
+    "preview/screen-dark.png",
+    "preview/screen-light.png",
     "LICENSE",
     "README.md"
   ]
