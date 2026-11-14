@@ -11,9 +11,14 @@
 - 补齐 rc.3 新增 CSS 令牌映射：`--dsw-alias-card-fill(-hover)` / `card-tile-fill`、`hovercard-bg` / `hovercard-label-*`、`tooltip-label`、`label-on-color`、`border-selected`、`trajectory-accent`、`toast-action`、`specific-guide-hero`、`specific-sidebar-glass-*`、`specific-sidebar-wash-*`。通知、悬浮卡、引导英雄区与 macOS 侧栏玻璃沿用清宵面板色与青碧 / 鎏金强调，不再露出宿主中性灰底或默认酬蓝洗色。
 - `dsh.client.version` 兼容上限更新为 `0.1.0-rc.6 - 0.2.2-rc.3`。
 
+### 修复
+
+- **光标高光跟手**：高光从 `::before` 的多层玻璃背景里拆出来，独立成一层圆斑，位置只写 `transform` 交给合成器搬动。之前每次移动都会让整块 7 层渐变（含毛玻璃 `backdrop-filter`）重绘，高光明显滞后；现在玻璃层的流光动画与光标高光互不触发重绘，圆斑只做合成位移。
+- **空 patch 首装深色写坏 YAML**：新档案的 `cordis.patch.yml` 模板是一行 `[]`，旧逻辑直接把 `- id: ui-theme` 追加在后面，得到 `[]` + 列表项的非法 YAML，下次启动 DSH 会解析失败起不来。现在先摘掉空数组标记再追加，并补了回归用例。
+
 ### 验证
 
-- 客户端 100/100（新增 L1 rc.3 新界面令牌、L2 强调映射），服务端 50/50。
+- 客户端 101/101（新增 B11b 高光层跟手、L1 rc.3 新界面令牌、L2 强调映射），服务端 52/52（新增空 patch 追加 ui-theme 两条）。
 - 用 rc.3 的 npm 包在独立 Web 档案里真实启动整套 Harness 做了界面复核：皮肤正常加载（`data-dsh-qingxiao`）、42 个 `data-slot`、调色盘五标签可开合、液态输入框的 `backdrop-filter` 与透明卡片生效、深浅色均正常、新令牌在 `body` 上取到清宵色值；新会话页与侧栏「插件 / 自动化任务 / 更多」入口显示正常。
 - 官方桌面端仍为 0.2.2-rc.1，桌面壳内复核待宿主更新后进行；本版以 rc.3 的真实 Web 运行 + npm 源码包比对为准。
 
