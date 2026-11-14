@@ -100,6 +100,8 @@ dsh plugin --profile desktop add /path/to/dsh-client-ui-skin-qingxiao
 
 重启 DSH 即可。
 
+> 注意：如果这个包已经通过 `dsh plugin add` 或插件市场进入了 profile 的 `dsh.profile.bundles`，**不要再**在 `cordis.patch.yml` 里追加上面的 insert。包自己的 `cordis.patch.yml` 已经会插入一次，重复插入会让插件被加载两次，报 `webserver: duplicate exact route "/api/dsh-qingxiao/settings"`。二选一：插件市场安装，或手动放置 + patch，不要同时用。
+
 ## 兼容性
 
 - DSH Web / 桌面端：0.1.0-rc.6 至 0.2.2-rc.3
