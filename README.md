@@ -103,7 +103,7 @@ dsh plugin --profile desktop add /path/to/dsh-client-ui-skin-qingxiao
 - 0.2.2 起 `@deepseek-ai/dsh-client-runtime` 已从宿主移除，slots / primitives / dockkit 为平台共享模块；本版已对齐（移除旧依赖，并用 `data-slot` / DockKit 钩子替换 `data-pane` / `detailsCol`）
 - 0.2.2-rc.2 / rc.3（2026-11-13）新增的会话头部视图标签、侧栏「更多」收纳、通知与悬浮卡、审阅改动页、子代理/团队面板与 macOS 侧栏玻璃，沿用同一套 `data-slot` / `data-dockkit-*` 钩子；本版补齐了这些新界面使用的 `--dsw-alias-card-fill`、`--dsw-alias-hovercard-*`、`--dsw-specific-sidebar-glass-*`、`--dsw-alias-trajectory-accent` 等令牌映射，避免新卡片露出宿主中性灰底
 - 平台：Web / Windows 桌面端（设置与人格数据保存在各自档案的 `data/` 目录下）
-- 最近验证：2026-11-14（客户端回归 102/102：五标签与设置页嵌入、字体/配色/布局持久化、主题包与主题码、暗色重建、液态输入框/光标光晕开关与跟手层、流光描边独立层、按钮冒烟与死按键检查、浅色题字裁剪、rc.3 新令牌覆盖；服务端 52/52。另用 rc.3 的 npm 包在独立 Web 档案真实启动 Harness 复核：皮肤加载、调色盘五标签、液态输入框、深浅色与新侧栏入口均正常。桌面端 rc.3 真机复核待宿主更新后进行）
+- 最近验证：2026-11-14（客户端回归 103/103：五标签与设置页嵌入、字体/配色/布局持久化、主题包与主题码、暗色重建、液态输入框/光标光晕开关与跟手层、流光描边独立层、按钮冒烟与死按键检查、浅色题字裁剪、rc.3 新令牌覆盖；服务端 52/52。另用 rc.3 的 npm 包在独立 Web 档案真实启动 Harness 复核：皮肤加载、调色盘五标签、液态输入框、深浅色与新侧栏入口均正常；桌面端 0.2.2-rc.3 真机复核通过，新会话 / PTC 会话 / 轨迹等视图下输入框均正常吸附底部）
 
 ## 版权所有人
 
