@@ -1,5 +1,22 @@
 # 更新日志
 
+## 0.7.2 — 2026-11-14
+
+本次为 DSH 0.2.2-rc.3 适配；`package.json` 与 `SKIN_VERSION` 均为 0.7.2。
+
+### 适配 0.2.2-rc.2 / rc.3
+
+- rc.2 是客户端大版本：会话头部新增视图标签、侧栏插件入口可收进「更多」并与会话列表共用滚动区、通知 / 卡片 / 悬浮卡、审阅改动页、子代理与 AgentTeam 面板、macOS 侧栏玻璃；rc.3 主要是新增实验性 DeepSeek 会话导入插件与 Windows 更新修复。
+- 逐项核对 DOM 契约：`settings.section`、`data-slot`（`sidebar` / `main` / `main.conversation` / `conversation.hero.agentPreset` / `shell.overlay`）、`data-composer-card` / `data-composer-input` / `_composerSeat`、`data-dockkit-*`、`data-sidebar-right-*`、`sidebarCol` / `rightbarCol` / `centerCol` / `overlayLayer` 等选择器在 rc.3 全部保留，无需改选择器。
+- 补齐 rc.3 新增 CSS 令牌映射：`--dsw-alias-card-fill(-hover)` / `card-tile-fill`、`hovercard-bg` / `hovercard-label-*`、`tooltip-label`、`label-on-color`、`border-selected`、`trajectory-accent`、`toast-action`、`specific-guide-hero`、`specific-sidebar-glass-*`、`specific-sidebar-wash-*`。通知、悬浮卡、引导英雄区与 macOS 侧栏玻璃沿用清宵面板色与青碧 / 鎏金强调，不再露出宿主中性灰底或默认酬蓝洗色。
+- `dsh.client.version` 兼容上限更新为 `0.1.0-rc.6 - 0.2.2-rc.3`。
+
+### 验证
+
+- 客户端 100/100（新增 L1 rc.3 新界面令牌、L2 强调映射），服务端 50/50。
+- 用 rc.3 的 npm 包在独立 Web 档案里真实启动整套 Harness 做了界面复核：皮肤正常加载（`data-dsh-qingxiao`）、42 个 `data-slot`、调色盘五标签可开合、液态输入框的 `backdrop-filter` 与透明卡片生效、深浅色均正常、新令牌在 `body` 上取到清宵色值；新会话页与侧栏「插件 / 自动化任务 / 更多」入口显示正常。
+- 官方桌面端仍为 0.2.2-rc.1，桌面壳内复核待宿主更新后进行；本版以 rc.3 的真实 Web 运行 + npm 源码包比对为准。
+
 ## 0.7.1 — 2026-11-11
 
 本次为液态玻璃输入框、首装深色默认与稳定性更新；`package.json` 与 `SKIN_VERSION` 均为 0.7.1。
