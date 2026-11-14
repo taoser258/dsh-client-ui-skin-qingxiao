@@ -2,6 +2,9 @@
 # 本包即官方 dsh 插件形态，用
 # `dsh plugin --profile <name> add <路径或 git URL>` 安装即可；
 # 皮肤之间的互斥由 home 层的 disabled 行管理（与其他 ui 皮肤一致）。
+# 双挂载保护：插件市场/聚合 bundle 可能已经把本包挂成自己的 entry，
+# 这里只在没有其他启用中的同名 entry 时才插入，避免路由重复。
 - insert:
     - id: ui-skin-qingxiao
       name: '@taosee258/dsh-client-ui-skin-qingxiao'
+      disabled: !!js "[...ctx.loader.entries()].some((e) => e.options.name === '@taosee258/dsh-client-ui-skin-qingxiao' && e.options.id !== 'ui-skin-qingxiao' && !e.disabled)"
